@@ -1,0 +1,129 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL Radically Simplified CDCL SAT Solver
+c Copyright (c) 2016-2019 Armin Biere, JKU Linz
+c 
+c Version 1.0.3 cb89cbfa16f47cb7bf1ec6ad9855e7b6d5203c18
+c g++ (GCC) 6.3.0 -Wall -Wextra -O3 -DNDEBUG
+c Fri Aug 23 08:17:16 CDT 2019 Linux login1 4.4.103-6.38-default x86_64
+c 
+c --- [ config ] -------------------------------------------------------------
+c 
+c using 'unsat' configuration (target unsatisfiable instances)
+c 
+c --- [ proof tracing ] ------------------------------------------------------
+c 
+c opening file to write '/tmp/25_993_0_four.drat'
+c writing binary proof trace to '/tmp/25_993_0_four.drat'
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from '/tmp/25_993_0_four.cnf'
+c opening file to read '/tmp/25_993_0_four.cnf'
+c found 'p cnf 259840 1039929' header
+c parsed 1039929 clauses in 0.45 seconds process time
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c   --stabilize=false              (different from default 'true')
+c   --walk=false                   (different from default 'true')
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds   reductions  redundant   irredundant
+c          MB    restarts       trail        variables
+c           level   conflicts       glue           remaining
+c 
+c *  0.47 139  0 0   0    0    0  0% 0 1039424 253710 98%
+c {  0.49 142  0 0   0    0    0  0% 0 1039424 253710 98%
+c -  0.74 148 317 1  13  301  188  5% 5 920256 253710 98%
+c I  1.31 148 96 1 132 1008  812  8% 9 920256 253710 98%
+c -  2.03 179 77 2 193 1480 1192  8% 9 920256 253710 98%
+c B  3.10 179 51 2 258 3014 2567  9% 9 920256 253710 98%
+c -  3.49 179 49 3 272 3247 2175  9% 9 920256 253710 98%
+c s  4.81 161 45 3 337 4078 2896  9% 9 920256 253710 98%
+c w  6.44 187 45 3 337 4078 2893  9% 9 920256 253710 98%
+c t  6.50 187 45 3 337 4078 2893  9% 9 919553 253710 98%
+c e  9.18 200 45 3 337 4078   36  9% 9 228473 28196 11%
+c s  9.42 200 45 3 337 4078   33  9% 9 228157 28196 11%
+c e  9.74 148 45 3 337 4078   27  9% 9 228157 28102 11%
+c 3 10.12 159 44 3 414 5000 4507  7% 9 228157 28102 11%
+c d 10.18 159 44 3 414 5000 4483  7% 9 228157 28098 11%
+c 2 10.20 159 44 3 414 5000 4475  7% 9 228157 28098 11%
+c p 10.28 159 44 3 414 5000 7366  7% 9 228157 28098 11%
+c - 10.41 159 42 4 463 5608 1537  7% 9 228157 28098 11%
+c F 10.44 159 40 4 476 6015 1867  6% 9 228157 28098 11%
+c - 10.65 159 36 5 522 7645 2409  7% 9 228157 28098 11%
+c 
+c  seconds   reductions  redundant  irredundant
+c          MB    restarts       trail       variables
+c           level   conflicts       glue         remaining
+c 
+c i 10.74 159 34 5 522 8084 2778  8% 9 228157 28083 11%
+c i 10.97 159 31 5 582 9835 4305  8% 8 228157 28053 11%
+c B 11.00 159 31 5 586 10017 4475  8% 8 228157 28053 11%
+c i 11.00 159 31 5 586 10055 4506  8% 8 228157 28052 11%
+c i 11.00 159 31 5 586 10086 4535  8% 8 228157 28039 11%
+c - 11.05 159 31 6 586 10097 2832  8% 8 223805 28030 11%
+c i 11.08 159 31 6 588 10186 2911  8% 8 223805 27997 11%
+c } 11.08 159 31 6 588 10203 2922  8% 8 223805 27990 11%
+c 0 11.08 159 31 6 588 10203 2922  8% 8 223805 27990 11%
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s UNSATISFIABLE
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         5.64   53.05% simplify
+c         4.97   46.76% search
+c         4.95   46.57% unstable
+c         2.92   27.48% elim
+c         1.50   14.08% vivify
+c         0.89    8.40% subsume
+c         0.10    0.90% ternary
+c         0.08    0.72% probe
+c         0.02    0.19% lucky
+c   =================================
+c        10.62   95.92% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c backtracked:               24544       240.56 %  of conflicts
+c chronological:              4152        16.92 %  of backtracks
+c conflicts:                 10203       960.37    per second
+c decisions:                 44121      4152.96    per second
+c eliminated:               225608        86.83 %  of all variables
+c fixed:                      6238         2.40 %  of all variables
+c learned:                    9466        92.78 %  per conflict
+c minimized:                 97701        26.70 %  learned literals
+c propagations:           17852573         1.68 M  per second
+c reduced:                    2638        25.86 %  per conflict
+c rephased:                      4      2550.75    interval
+c restarts:                    588        17.35    interval
+c substituted:                   4         0.00 %  of all variables
+c subsumed:                   6020         0.20 %  of all clauses
+c strengthened:              15106         0.49 %  of all clauses
+c ternary:                    4193         0.33 %  of resolved
+c vivified:                    142         0.00 %  of all clauses
+c weakened:                 808038         2.84    average size
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:        11.08    seconds
+c total real time since initialization:           11.08    seconds
+c maximum resident set size of process:          212.35    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 20
