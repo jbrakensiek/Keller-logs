@@ -12,3 +12,7 @@ Logs for Keller's conjecture experiments
 `solve` is the log of the CaDiCaL solver
 
 `check` is the log of DRAT-trim
+
+------
+
+Joshua Brakensiek, Marijn Heule, John Mackey. The Resolution of Keller's Conjecture. Manuscript.
